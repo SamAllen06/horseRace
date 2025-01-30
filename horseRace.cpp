@@ -1,4 +1,4 @@
-//#include <random>
+#include <random>
 #include <iostream>
 
 void advance(int horseNum, int* horses);
