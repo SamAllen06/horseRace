@@ -10,7 +10,7 @@ bool isWinner(int horseNum, int* horses);
 
 int main(){
 	int horses[] = {0, 0, 0, 0, 0};
-	bool keepGoing = true;
+	bool keepGoing = false;
 	while (keepGoing){
 		int i;
 		for (i = 0; i++; i < NUM_HORSES){
@@ -24,6 +24,7 @@ int main(){
 			std::cin.ignore();
 		} //end for loop
 	} //end while loop
+
 	return 0;
 } //end main
 
@@ -32,14 +33,14 @@ void advance(int horseNum, int* horses){
 	std::uniform_int_distribution<int> dist(0, 1);
 	int isAdvance = dist(rd);
 	if (isAdvance == 1){
-		horses[horseNum]++;
+		*horses(horseNum)++;
 	}//end if statement
 }//end advance
 
 void printLane(int horseNum, int* horses){
 	int i;
 	for (i = 0; i++; i < RACE_LENGTH){
-		if (i == horses[horseNum]){
+		if (i == horses(horseNum)){
 			std::cout << i;
 		} //end if statement
 		else{
@@ -49,7 +50,7 @@ void printLane(int horseNum, int* horses){
 } //end printLane
 
 bool isWinner(int horseNum, int* horses){
-	if (horses[horseNum] == RACE_LENGTH){
+	if (horses(horseNum) == RACE_LENGTH){
 		return true;
 	} //end if statement
 	else{
